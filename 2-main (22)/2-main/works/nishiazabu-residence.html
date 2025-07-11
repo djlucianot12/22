@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishiazabu Residence</title>
+    <link rel="stylesheet" href="../assets/css/new_project_core.css">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicons/favicon_ltsd.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicons/site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+    <header class="npc-header">
+        <div class="npc-header-content">
+            <div class="npc-header-left">
+                <a href="../index.html" class="npc-logo">LTSD</a>
+                <nav class="npc-nav">
+                    <a href="../index.html#works" class="npc-nav-link">Back to Projects</a>
+                </nav>
+            </div>
+            <div class="npc-header-right">
+                <span class="npc-project-date">Fecha Proyecto Nishiazabu Residence</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="npc-main-content">
+        <section class="npc-project-title-section">
+            <h1>Nishiazabu Residence</h1>
+        </section>
+
+        <section class="npc-media-gallery">
+            <!-- 8 Imágenes y 2 Videos -->
+            <div class="npc-media-item" data-media-type="image">
+                <img src="../assets/img/common/placeholder.svg?id=nr_img1" alt="Imagen 1 Nishiazabu Residence">
+                <p class="npc-media-caption">Descripción Imagen 1</p>
+            </div>
+            <div class="npc-media-item" data-media-type="image">
+                <img src="../assets/img/common/placeholder.svg?id=nr_img2" alt="Imagen 2 Nishiazabu Residence">
+                <p class="npc-media-caption">Descripción Imagen 2</p>
+            </div>
+            <div class="npc-media-item" data-media-type="image">
+                <img src="../assets/img/common/placeholder.svg?id=nr_img3" alt="Imagen 3 Nishiazabu Residence">
+                <p class="npc-media-caption">Descripción Imagen 3</p>
+            </div>
+            <div class="npc-media-item" data-media-type="image">
+                <img src="../assets/img/common/placeholder.svg?id=nr_img4" alt="Imagen 4 Nishiazabu Residence">
+                <p class="npc-media-caption">Descripción Imagen 4</p>
+            </div>
+            <div class="npc-media-item" data-media-type="video">
+                <div class="npc-video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_NR_1" title="Video 1 Nishiazabu Residence" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="npc-media-caption">Descripción Video 1</p>
+            </div>
+            <div class="npc-media-item" data-media-type="image">
+                <img src="../assets/img/common/placeholder.svg?id=nr_img5" alt="Imagen 5 Nishiazabu Residence">
+                <p class="npc-media-caption">Descripción Imagen 5</p>
+            </div>
+            <div class="npc-media-item" data-media-type="image">
+                <img src="../assets/img/common/placeholder.svg?id=nr_img6" alt="Imagen 6 Nishiazabu Residence">
+                <p class="npc-media-caption">Descripción Imagen 6</p>
+            </div>
+            <div class="npc-media-item" data-media-type="image">
+                <img src="../assets/img/common/placeholder.svg?id=nr_img7" alt="Imagen 7 Nishiazabu Residence">
+                <p class="npc-media-caption">Descripción Imagen 7</p>
+            </div>
+            <div class="npc-media-item" data-media-type="image">
+                <img src="../assets/img/common/placeholder.svg?id=nr_img8" alt="Imagen 8 Nishiazabu Residence">
+                <p class="npc-media-caption">Descripción Imagen 8</p>
+            </div>
+            <div class="npc-media-item" data-media-type="video">
+                <div class="npc-video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_NR_2" title="Video 2 Nishiazabu Residence" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="npc-media-caption">Descripción Video 2</p>
+            </div>
+        </section>
+
+        <section class="npc-project-description">
+            <h2>Descripción Detallada: Nishiazabu Residence</h2>
+            <p>Contenido específico para Nishiazabu Residence...</p>
+        </section>
+    </main>
+
+    <footer class="npc-footer">
+        <p>&copy; <span id="npc-current-year"></span> LT Studio Desing. Todos los derechos reservados.</p>
+    </footer>
+
+    <div class="npc-media-counter-wrapper">
+        <span id="npc-current-media">01</span>
+        <div class="npc-progress-bar-container">
+            <div class="npc-progress-bar-fill" id="npc-progress-fill"></div>
+        </div>
+        <span id="npc-total-media">10</span>
+    </div>
+
+    <script>
+        document.getElementById('npc-current-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="../assets/js/new_project_counter.js" defer></script>
+    <script>
+    // Script de reseteo agresivo
+    function applyAggressiveResets(logPrefix = '') {
+        const elementsToReset = [
+            { selector: 'html', name: '<html>' },
+            { selector: 'body', name: '<body>' },
+            { selector: '#wrapper', name: '#wrapper' },
+            { selector: '#page', name: '#page' },
+            { selector: '#contents', name: '#contents' }
+        ];
+        let changesMadeThisRun = false;
+        elementsToReset.forEach(item => {
+            const el = document.querySelector(item.selector);
+            if (el) {
+                let elChanged = false;
+                if (window.getComputedStyle(el).transform !== 'none') {
+                    el.style.setProperty('transform', 'none', 'important');
+                    elChanged = true;
+                }
+                if (window.getComputedStyle(el).filter !== 'none') {
+                    el.style.setProperty('filter', 'none', 'important');
+                    elChanged = true;
+                }
+                if (window.getComputedStyle(el).perspective !== 'none') {
+                    el.style.setProperty('perspective', 'none', 'important');
+                    elChanged = true;
+                }
+                const currentOverflowY = window.getComputedStyle(el).overflowY;
+                if (currentOverflowY === 'hidden' ||
+                    ((item.name === '<body>' || item.name === '#wrapper' || item.name === '#page' || item.name === '#contents') &&
+                     (currentOverflowY !== 'auto' && currentOverflowY !== 'scroll' && currentOverflowY !== 'visible'))) {
+                    el.style.setProperty('overflow-y', 'auto', 'important');
+                    elChanged = true;
+                }
+                 if (item.name === '<body>' || item.name === '#wrapper' || item.name === '#page' || item.name === '#contents') {
+                     if (window.getComputedStyle(el).overflow !== 'auto' && window.getComputedStyle(el).overflow !== 'scroll' && window.getComputedStyle(el).overflow !== 'visible') {
+                        el.style.setProperty('overflow', 'auto', 'important');
+                        elChanged = true;
+                     }
+                 }
+                if (elChanged) {
+                    console.log(`${logPrefix}Reseteo aplicado a: ${item.name}`);
+                    changesMadeThisRun = true;
+                }
+            }
+        });
+        // if (changesMadeThisRun) console.log(`${logPrefix}Fin del ciclo de reseteo.`);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Proyecto: DOMContentLoaded - Reseteo agresivo inicial.');
+        applyAggressiveResets('INIT: ');
+    });
+
+    let resetAttempts = 0;
+    const resetInterval = 100; // ms
+    const totalResetDuration = 3000; // ms
+    const maxAttempts = totalResetDuration / resetInterval;
+
+    const intervalId = setInterval(function() {
+        applyAggressiveResets(`INTERVAL #${resetAttempts + 1}: `);
+        resetAttempts++;
+        if (resetAttempts >= maxAttempts) {
+            clearInterval(intervalId);
+            console.log('Proyecto: Reseteo periódico finalizado.');
+            setTimeout(() => {
+                console.log('Proyecto: Reseteo agresivo tardío final.');
+                applyAggressiveResets('LATE FINAL: ');
+            }, 500);
+        }
+    }, resetInterval);
+    </script>
+</body>
+</html>

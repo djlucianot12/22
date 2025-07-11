@@ -1,0 +1,195 @@
+/* Splash Screen Styles */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a; /* Similar al fondo de carga existente */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 200; /* Asegurar que esté por encima de otros elementos */
+    color: #fff;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out, visibility 0.7s ease-out; /* Transición para inmersión */
+    transform-origin: center center;
+}
+
+.splash-logo {
+    font-family: 'butler_medium', serif; /* Cambiado a butler_medium */
+    font-size: 4.5rem; /* Mantener tamaño grande, se puede ajustar si es necesario */
+    font-weight: normal; /* butler_medium ya tiene un peso definido, 'normal' o 500 suele ser el medio */
+    letter-spacing: 0.02em;
+    margin-bottom: 40px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+
+.splash-loading-text {
+    font-size: 1.6rem; /* Aumentar tamaño */
+    margin-top: 25px;
+    margin-bottom: 20px; /* Ajustar para acercar a la barra */
+    color: #ccc;
+    text-align: center;
+    opacity: 0; /* Iniciar oculto, JS lo hará visible */
+    transition: opacity 0.3s ease-in; /* Para un fade-in suave al empezar a escribir */
+}
+
+
+/* Ya no se necesitan animaciones de aparición de letras aquí, se manejan por JS */
+/* @keyframes logoLetterAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+/* @keyframes loadingTextLetterAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+.progress-bar-container {
+    width: 50%;
+    max-width: 300px;
+    height: 8px;
+    background-color: #222;
+    border-radius: 0px !important; /* Forzar bordes cuadrados */
+    overflow: hidden;
+    margin-top: 120px; /* Aumentado para bajarlo más */
+    margin-bottom: 40px;
+    opacity: 0; /* Controlado por JS */
+    position: relative;
+    transition: opacity 0.5s ease-out; /* Para aparición suave desde JS */
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ccc, #fff);
+    border-radius: 0px !important; /* Forzar bordes cuadrados */
+    transition: width 0.3s ease-out;
+}
+
+.progress-percentage {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 15px);
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #fff;
+    opacity: 0; /* Controlado por JS */
+    white-space: nowrap;
+    transition: opacity 0.5s ease-out; /* Para aparición suave desde JS */
+    /* border: 1px solid red; */ /* Para depuración de visibilidad */
+}
+
+
+.splash-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 0;
+    animation: fadeInParticle 0.3s forwards,
+                 twinkle 1.2s infinite ease-in-out;
+}
+
+/* Ya no se necesita fadeInLogo aquí si no lo usa el porcentaje, pero lo dejo por si acaso o para futura referencia */
+@keyframes fadeInLogo {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ya no se necesita fadeInProgressBar */
+/* @keyframes fadeInProgressBar {
+    from { opacity: 0; transform: scaleX(0); }
+    to { opacity: 1; transform: scaleX(1); }
+} */
+
+@keyframes fadeInParticle {
+    to { opacity: 0.85; }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.15; transform: scale(0.8); }
+    50% { opacity: 0.85; transform: scale(1.2); }
+}
+
+/* Ajustes para responsividad si es necesario */
+@media screen and (max-width: 767px) {
+    .splash-logo {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+    .splash-loading-text {
+        font-size: 1rem;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+    .progress-bar-container {
+        width: 70%;
+        margin-top: 60px; /* Ajustado para móvil */
+    }
+    .progress-percentage {
+        font-size: 1rem;
+        top: auto;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        width: auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .splash-logo {
+        font-size: 2rem;
+    }
+     .progress-bar-container {
+        width: 80%;
+        margin-top: 50px; /* Ajustado para móvil muy pequeño */
+    }
+    .progress-percentage {
+        font-size: 0.9rem;
+        bottom: -22px;
+    }
+}
+
+/* Page Transition Styles */
+body.page-transition-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.p-stage__menu__item.is-transitioning {
+    transform: scale(1.1) translateZ(50px); /* Ligero zoom y elevación */
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.4s ease-out;
+    z-index: 10000; /* Asegurar que esté por encima de otros elementos durante la transición */
+    position: relative; /* Necesario para z-index en algunos casos */
+}
