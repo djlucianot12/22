@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PARK MANSION Minami Azabu</title>
-    <link rel="stylesheet" href="../assets/css/new_project_core.css">
     <link rel="stylesheet" href="../assets/css/bundle.css">
+    <link rel="stylesheet" href="../assets/css/new_project_core.css">
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/svg+xml" href="../assets/favicons/favicon_ltsd.svg">
@@ -14,14 +14,15 @@
     <link rel="manifest" href="../assets/favicons/site.webmanifest">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body class="page-works-detail">
+<body class="page-works-detail is-ready">
+<div id="wrapper">
 
     <header class="npc-header">
         <div class="npc-header-content">
             <div class="npc-header-left">
                 <a href="../index.html" class="npc-logo js-target--pointer__stateChange">LTSD</a>
                 <nav class="npc-nav">
-                    <a href="../index.html#works" class="npc-nav-link js-target--pointer__stateChange">Back to Projects</a>
+                    <a href="../index.html" class="npc-nav-link js-target--pointer__stateChange">Back to Home</a>
                 </nav>
             </div>
             <div class="npc-header-right">
@@ -66,16 +67,18 @@
         <span id="npc-total-media">10</span>
     </div>
 
-    <!-- Elemento para el cursor interactivo -->
-    <div id="app-mousePointer"></div>
+</div> <!-- Cierre de #wrapper -->
 
-    <script>
-        document.getElementById('npc-current-year').textContent = new Date().getFullYear();
-    </script>
-    <script src="../assets/js/new_project_counter.js" defer></script>
+<!-- Elemento para el cursor interactivo -->
+<div id="app-mousePointer"></div>
 
-    <!-- Scripts principales para la interactividad, incluido el cursor -->
-    <script src="../assets/js/vendor.bundle.js" defer></script>
-    <script src="../assets/js/app.bundle.js" defer></script>
+<script>
+    document.getElementById('npc-current-year').textContent = new Date().getFullYear();
+</script>
+<script src="../assets/js/new_project_counter.js" defer></script>
+
+<!-- Scripts principales para la interactividad, incluido el cursor -->
+<script src="../assets/js/vendor.bundle.js" defer></script>
+<script src="../assets/js/app.bundle.js" defer></script>
 </body>
 </html>
