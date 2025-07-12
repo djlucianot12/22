@@ -15,13 +15,14 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body class="page-works-detail">
+<div id="wrapper">
 
     <header class="npc-header">
         <div class="npc-header-content">
             <div class="npc-header-left">
                 <a href="../index.html" class="npc-logo js-target--pointer__stateChange">LTSD</a>
                 <nav class="npc-nav">
-                    <a href="../index.html#works" class="npc-nav-link js-target--pointer__stateChange">Back to Projects</a>
+                    <a href="../index.html#works" class="npc-nav-link js-target--pointer__stateChange">Back to Home</a>
                 </nav>
             </div>
             <div class="npc-header-right">
@@ -111,6 +112,7 @@
         const elementsToReset = [
             { selector: 'html', name: '<html>' },
             { selector: 'body', name: '<body class="page-works-detail">' },
+<div id="wrapper">
             { selector: '#wrapper', name: '#wrapper' }, // Asumiendo que #wrapper es el problemático
             { selector: '#page', name: '#page' },       // Incluir por si acaso
             { selector: '#contents', name: '#contents' } // Incluir por si acaso
@@ -139,6 +141,7 @@
 
                 // Solo forzar overflow si es estrictamente 'hidden' y es un wrapper principal o body
                 if (item.name === '<body class="page-works-detail">' || item.name === '#wrapper' || item.name === '#page' || item.name === '#contents') {
+<div id="wrapper">
                     if (currentOverflow === 'hidden' || currentOverflowY === 'hidden') {
                          el.style.setProperty('overflow', 'auto', 'important');
                          el.style.setProperty('overflow-y', 'auto', 'important');
@@ -179,5 +182,6 @@
         }
     }, resetIntervalMs);
     </script>
+</div>
 </body>
 </html>
