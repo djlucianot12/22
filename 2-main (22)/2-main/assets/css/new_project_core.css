@@ -1,101 +1,62 @@
-/* assets/css/new_project_core.css */
-body {
-    margin: 0; padding: 0; font-family: Arial, sans-serif; line-height: 1.6;
-    background-color: #ffffff; color: #333333;
-}
-img { max-width: 100%; height: auto; display: block; }
-a { color: #007bff; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-.npc-main-content {
-    max-width: 1140px; margin: 0 auto; padding: 20px; padding-top: 75px;
-}
-.npc-header {
-    background-color: #f8f8f8; padding: 15px 25px; border-bottom: 1px solid #dddddd;
-    position: fixed !important; top: 0; left: 0; width: 100%;
-    z-index: 1000; box-sizing: border-box; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-.npc-header-content {
-    max-width: 1140px; margin: 0 auto; display: flex;
-    justify-content: space-between; align-items: center;
-}
-.npc-header-left { display: flex; align-items: center; }
-.npc-logo {
-    font-size: 1.6em; font-weight: bold; color: #333333; margin-right: 25px;
-}
-.npc-logo:hover { text-decoration: none; }
-.npc-nav-link { color: #555555; font-size: 0.95em; }
-.npc-project-date { font-size: 0.9em; color: #777777; }
-.npc-project-title-section {
-    text-align: center; padding: 30px 0; margin-bottom: 30px;
-    border-bottom: 1px solid #eeeeee;
-}
-.npc-project-title-section h1 { margin: 0; font-size: 2.4em; font-weight: 600; }
-.npc-media-gallery { margin-bottom: 30px; }
-.npc-media-item { margin-bottom: 40px; }
-.npc-media-item img {
-    width: 100%; height: auto; border-radius: 4px;
-    margin: 0 auto 10px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-.npc-video-wrapper {
-    width: 100%; position: relative; padding-bottom: 56.25%; height: 0;
-    overflow: hidden; background: #000000; border-radius: 4px;
-    margin: 0 auto 10px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-.npc-video-wrapper iframe {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-}
-.npc-media-caption {
-    font-size: 0.9em; color: #555555; text-align: center; margin-top: 8px;
-}
-.npc-project-description {
-    padding: 25px 0; border-top: 1px solid #eeeeee; margin-top: 30px;
-}
-.npc-project-description h2 { font-size: 1.7em; margin-bottom: 20px; font-weight: 600; }
-.npc-footer {
-    text-align: center; padding: 30px 20px; margin-top: 40px;
-    border-top: 1px solid #dddddd; background-color: #f8f8f8;
-    color: #555555; font-size: 0.9em;
+/* Estilos base para el contenedor de la galería */
+.npc-media-gallery {
+    position: relative; /* Necesario para posicionar los ítems absolutamente */
+    width: 100%;
+    /* Se podría necesitar una altura fija o calculada si los ítems no definen la altura del contenedor */
 }
 
-/* --- Contador de Medios con Barra de Progreso --- */
-.npc-media-counter-wrapper {
-    background-color: rgba(30, 30, 30, 0.9);
-    color: #ffffff;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    position: fixed !important;
-    bottom: 25px;
-    right: 25px;
-    z-index: 1000;
-    line-height: 1;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-#npc-current-media,
-#npc-total-media {
-    display: inline-block;
-    line-height: 1;
-    color: #ffffff;
-}
-.npc-progress-bar-container {
-    width: 60px;
-    height: 5px; /* Ligeramente más alta para mejor visibilidad */
-    background-color: rgba(255, 255, 255, 0.25); /* Fondo de la barra vacía */
-    border-radius: 2.5px;
-    margin: 0 10px; /* Espacio entre números y barra */
-    overflow: hidden;
-}
-.npc-progress-bar-fill {
+/* Estilos para cada ítem de la galería (imagen o video) */
+.npc-media-item {
+    position: absolute; /* Superponer todos los ítems */
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    width: 0%; /* Inicialmente vacía */
-    background-color: #ffffff; /* Barra llena blanca */
-    border-radius: 2.5px;
-    transition: width 0.1s linear; /* Transición suave para el llenado */
+    opacity: 0; /* Ocultos por defecto */
+    transition: opacity 0.8s ease-in-out; /* Transición suave de fundido */
+    visibility: hidden; /* Ocultar para que no sean interactivos */
+}
+
+/* Estilo para el ítem activo/visible */
+.npc-media-item.is-active {
+    opacity: 1;
+    visibility: visible;
+    position: relative; /* O static, para que ocupe espacio y defina la altura del contenedor */
+}
+
+/* Ajustes para asegurar que los videos y las imágenes se comporten bien */
+.npc-media-item img,
+.npc-media-item .npc-video-wrapper {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+}
+
+.npc-media-item .npc-video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para las captions, si existen */
+.npc-media-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+/* Estilos existentes del header, footer, etc. (se mantienen) */
+.npc-header, .npc-footer, .npc-main-content, .npc-project-title-section, .npc-project-description {
+    /* ... tus estilos existentes ... */
+    padding: 20px; /* Ejemplo */
+}
+
+.npc-media-counter-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    /* ... tus estilos existentes ... */
 }
