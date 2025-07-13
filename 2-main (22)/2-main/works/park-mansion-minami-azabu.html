@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" class="no-js">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PARK MANSION Minami Azabu</title>
-    <link rel="stylesheet" href="../assets/css/bundle.css">
     <link rel="stylesheet" href="../assets/css/new_project_core.css">
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
@@ -13,16 +12,22 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
     <link rel="manifest" href="../assets/favicons/site.webmanifest">
     <meta name="theme-color" content="#ffffff">
+    <style>
+        /* Aplica el cursor de bolita a toda la página y a los links al hacer hover */
+        body.project-detail-cursor,
+        body.project-detail-cursor a:hover {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7"/></svg>') 8 8, auto;
+        }
+    </style>
 </head>
-<body class="page-works-detail is-ready">
-<div id="wrapper">
+<body class="project-detail-cursor">
 
     <header class="npc-header">
         <div class="npc-header-content">
             <div class="npc-header-left">
-                <a href="../index.html" class="npc-logo js-target--pointer__stateChange">LTSD</a>
+                <a href="../index.html" class="npc-logo">LTSD</a>
                 <nav class="npc-nav">
-                    <a href="../index.html" class="npc-nav-link js-target--pointer__stateChange">Back to Home</a>
+                    <a href="../index.html#works" class="npc-nav-link">Back to Projects</a>
                 </nav>
             </div>
             <div class="npc-header-right">
@@ -37,6 +42,7 @@
         </section>
 
         <section class="npc-media-gallery">
+            <!-- Media items here -->
             <div class="npc-media-item" data-media-type="image"><img src="../assets/img/common/placeholder.svg?id=pmma_img1" alt="Imagen 1 PM Minami Azabu"><p class="npc-media-caption">Descripción Imagen 1</p></div>
             <div class="npc-media-item" data-media-type="image"><img src="../assets/img/common/placeholder.svg?id=pmma_img2" alt="Imagen 2 PM Minami Azabu"><p class="npc-media-caption">Descripción Imagen 2</p></div>
             <div class="npc-media-item" data-media-type="image"><img src="../assets/img/common/placeholder.svg?id=pmma_img3" alt="Imagen 3 PM Minami Azabu"><p class="npc-media-caption">Descripción Imagen 3</p></div>
@@ -67,18 +73,9 @@
         <span id="npc-total-media">10</span>
     </div>
 
-</div> <!-- Cierre de #wrapper -->
-
-<!-- Elemento para el cursor interactivo -->
-<div id="app-mousePointer"></div>
-
-<script>
-    document.getElementById('npc-current-year').textContent = new Date().getFullYear();
-</script>
-<script src="../assets/js/new_project_counter.js" defer></script>
-
-<!-- Scripts principales para la interactividad, incluido el cursor -->
-<script src="../assets/js/vendor.bundle.js" defer></script>
-<script src="../assets/js/app.bundle.js" defer></script>
+    <script>
+        document.getElementById('npc-current-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="../assets/js/new_project_counter.js" defer></script>
 </body>
 </html>
