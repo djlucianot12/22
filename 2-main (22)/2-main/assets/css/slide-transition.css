@@ -1,9 +1,27 @@
-.barba-leave-active,
-.barba-enter-active {
-    transition: opacity .5s;
+.fade-out-to-blue {
+    animation: fade-out-to-blue 1s forwards;
 }
 
-.barba-leave-to,
-.barba-enter-from {
-    opacity: 0;
+.fade-in-from-blue {
+    animation: fade-in-from-blue 1s forwards;
+}
+
+@keyframes fade-out-to-blue {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        background-color: blue;
+    }
+}
+
+@keyframes fade-in-from-blue {
+    from {
+        opacity: 0;
+        background-color: blue;
+    }
+    to {
+        opacity: 1;
+    }
 }

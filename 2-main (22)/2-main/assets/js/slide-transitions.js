@@ -1,28 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-    barba.init({
-        transitions: [{
-            name: 'project-transition',
-            leave(data) {
-                return gsap.to(data.current.container, {
-                    opacity: 0
-                });
-            },
-            enter(data) {
-                return gsap.from(data.next.container, {
-                    opacity: 0
-                });
+    const projectLinks = document.querySelectorAll('.p-stage__menu__item');
+
+    projectLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            const url = this.dataset.canvasUrl;
+
+            if (url) {
+                event.preventDefault();
+                document.body.classList.add('fade-out-to-blue');
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 1000);
             }
-        }],
-        views: [{
-            namespace: 'home',
-            beforeEnter(data) {
-                // do something before the new page is loaded
-            }
-        }, {
-            namespace: 'project',
-            beforeEnter(data) {
-                // do something before the new page is loaded
-            }
-        }]
+        });
     });
+
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            document.body.classList.remove('fade-out-to-blue');
+            document.body.classList.add('fade-in-from-blue');
+        }
+    });
+
+    document.body.classList.add('fade-in-from-blue');
 });
