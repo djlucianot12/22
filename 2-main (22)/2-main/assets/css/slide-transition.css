@@ -1,12 +1,12 @@
-.slide-and-fade-out {
-    animation: slide-and-fade-out 0.5s forwards;
+.home-to-project-transition-out {
+    animation: slide-out-to-left 0.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
 
-.slide-and-fade-in {
-    animation: slide-and-fade-in 0.5s forwards;
+.home-to-project-transition-in {
+    animation: slide-in-from-right 0.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
 
-@keyframes slide-and-fade-out {
+@keyframes slide-out-to-left {
     from {
         transform: translateX(0);
         opacity: 1;
@@ -17,7 +17,7 @@
     }
 }
 
-@keyframes slide-and-fade-in {
+@keyframes slide-in-from-right {
     from {
         transform: translateX(100%);
         opacity: 0;
