@@ -174,5 +174,10 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
         console.log('[NPC Counter] Llamada inicial a updateDisplay (250ms).');
         updateDisplay(1, true); // true indica que es el inicio, como si fuera un autoplay para el primer item
+
+        // Dispatch a custom event when the counter animation is complete
+        setTimeout(() => {
+            document.dispatchEvent(new CustomEvent('counterAnimationComplete'));
+        }, 4000);
     }, 250);
 });
