@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const projectLinks = document.querySelectorAll('.p-stage__menu__item');
+    const transitionLinks = document.querySelectorAll('a:not([href^="#"]):not([target="_blank"])');
 
-    projectLinks.forEach(link => {
+    transitionLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            const url = this.dataset.canvasUrl;
+            const url = this.href;
 
-            if (url) {
+            if (url.startsWith(window.location.origin)) {
                 event.preventDefault();
-                document.body.classList.add('slide-and-fade-out');
+                document.body.classList.add('slide-out');
                 setTimeout(() => {
                     window.location.href = url;
                 }, 500);
@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('pageshow', (event) => {
         if (event.persisted) {
-            document.body.classList.remove('slide-and-fade-out');
+            document.body.classList.remove('slide-out');
         }
     });
 
-    document.body.classList.add('slide-and-fade-in');
+    document.body.classList.add('slide-in');
 });
