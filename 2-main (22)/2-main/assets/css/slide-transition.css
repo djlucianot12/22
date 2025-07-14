@@ -1,25 +1,29 @@
-.fade-out {
-    animation: fade-out 0.5s forwards;
+.zoom-out {
+    animation: zoom-out 0.5s forwards;
 }
 
-.fade-in {
-    animation: fade-in 0.5s forwards;
+.zoom-in {
+    animation: zoom-in 0.5s forwards;
 }
 
-@keyframes fade-out {
+@keyframes zoom-out {
     from {
+        transform: scale(1);
         opacity: 1;
     }
     to {
+        transform: scale(0);
         opacity: 0;
     }
 }
 
-@keyframes fade-in {
+@keyframes zoom-in {
     from {
+        transform: scale(0);
         opacity: 0;
     }
     to {
+        transform: scale(1);
         opacity: 1;
     }
 }
