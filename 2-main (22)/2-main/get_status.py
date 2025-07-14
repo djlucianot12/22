@@ -13,4 +13,4 @@ def get_url_status(url: str):
         print(f"Error fetching URL {url}: {e}")
 
 if __name__ == "__main__":
-    get_url_status("https://www.example.com")
+    get_url_status("https://www.google.com")
