@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (url.startsWith(window.location.origin)) {
                 event.preventDefault();
-                document.body.classList.add('fade-out');
+                document.body.classList.add('zoom-out');
                 setTimeout(() => {
                     window.location.href = url;
                 }, 500);
@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('pageshow', (event) => {
         if (event.persisted) {
-            document.body.classList.remove('fade-out');
+            document.body.classList.remove('zoom-out');
         }
     });
 
-    document.body.classList.add('fade-in');
+    document.body.classList.add('zoom-in');
 });
