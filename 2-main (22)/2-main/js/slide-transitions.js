@@ -5,13 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
         projectLink.addEventListener('click', function(event) {
             event.preventDefault();
             document.body.classList.add('test-transition-out');
+
+            const url = this.href;
             setTimeout(() => {
-                window.location.href = this.href;
+                window.location.href = url;
             }, 500);
         });
     }
+});
 
-    if (window.location.pathname.includes('/works/')) {
-        document.body.classList.add('test-transition-in');
-    }
+window.addEventListener('beforeunload', () => {
+    document.body.classList.add('test-transition-in');
 });
