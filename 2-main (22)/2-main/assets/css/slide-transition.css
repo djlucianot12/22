@@ -1,9 +1,9 @@
 .zoom-out {
-    animation: zoom-out 0.5s forwards;
+    animation: zoom-out 5s forwards;
 }
 
 .zoom-in {
-    animation: zoom-in 0.5s forwards;
+    animation: zoom-in 5s forwards;
 }
 
 @keyframes zoom-out {
