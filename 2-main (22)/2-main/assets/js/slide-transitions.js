@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (url.startsWith(window.location.origin)) {
                 event.preventDefault();
-                document.body.classList.add('slide-out');
+                document.body.classList.add('slide-out-to-left');
                 setTimeout(() => {
                     window.location.href = url;
                 }, 500);
@@ -17,9 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('pageshow', (event) => {
         if (event.persisted) {
-            document.body.classList.remove('slide-out');
+            document.body.classList.remove('slide-out-to-left');
+            document.body.classList.add('slide-in-from-right');
         }
     });
 
-    document.body.classList.add('slide-in');
+    document.body.classList.add('slide-in-from-right');
 });
