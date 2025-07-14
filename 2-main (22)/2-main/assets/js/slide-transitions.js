@@ -1,37 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const parkMansionLink = document.querySelector('li[data-canvas-url="works/park-mansion-minami-azabu.html"]');
+    const transitionLinks = document.querySelectorAll('a:not([href^="#"]):not([target="_blank"])');
 
-    if (parkMansionLink) {
-        parkMansionLink.addEventListener('click', function(event) {
-            event.preventDefault();
-            document.body.classList.add('slide-out-to-left');
+    transitionLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            const url = this.href;
 
-            const url = this.dataset.canvasUrl;
-            setTimeout(() => {
-                window.location.href = url;
-            }, 500);
+            if (url.startsWith(window.location.origin)) {
+                event.preventDefault();
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 500);
+            }
         });
-    }
+    });
 
     window.addEventListener('pageshow', (event) => {
         if (event.persisted) {
-            document.body.classList.remove('slide-out-to-left');
-            document.body.classList.add('slide-in-from-right');
+            document.body.classList.remove('fade-out');
         }
     });
 
-    // Use 'visibilitychange' and 'pagehide' as alternatives to 'unload'
-    document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'hidden') {
-            document.body.classList.remove('slide-in-from-right');
-        }
-    });
-
-    window.addEventListener('pagehide', (event) => {
-        if (event.persisted === false) {
-            document.body.classList.remove('slide-in-from-right');
-        }
-    });
-
-    document.body.classList.add('slide-in-from-right');
+    document.body.classList.add('fade-in');
 });
