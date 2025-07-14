@@ -1,27 +1,7 @@
-.fade-out-to-blue {
-    animation: fade-out-to-blue 1s forwards;
+.project-link {
+    transition: opacity 0.5s ease-in-out;
 }
 
-.fade-in-from-blue {
-    animation: fade-in-from-blue 1s forwards;
-}
-
-@keyframes fade-out-to-blue {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        background-color: blue;
-    }
-}
-
-@keyframes fade-in-from-blue {
-    from {
-        opacity: 0;
-        background-color: blue;
-    }
-    to {
-        opacity: 1;
-    }
+.project-link:hover {
+    opacity: 0.5;
 }
