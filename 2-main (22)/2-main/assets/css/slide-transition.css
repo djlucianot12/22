@@ -1,7 +1,29 @@
-.project-link {
-    transition: opacity 0.5s ease-in-out;
+.slide-and-fade-out {
+    animation: slide-and-fade-out 0.5s forwards;
 }
 
-.project-link:hover {
-    opacity: 0.5;
+.slide-and-fade-in {
+    animation: slide-and-fade-in 0.5s forwards;
+}
+
+@keyframes slide-and-fade-out {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-and-fade-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
