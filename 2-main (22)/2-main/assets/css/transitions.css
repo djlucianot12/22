@@ -1,0 +1,25 @@
+body.page-transition-out {
+    animation: fade-out 0.55s ease-in-out forwards;
+}
+
+body.page-transition-in {
+    animation: fade-in 0.55s ease-in-out forwards;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
