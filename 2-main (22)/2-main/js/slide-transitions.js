@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+});
 
+window.addEventListener('load', () => {
     if (window.location.pathname.includes('/works/')) {
         document.body.classList.add('home-to-project-transition-in');
     }
