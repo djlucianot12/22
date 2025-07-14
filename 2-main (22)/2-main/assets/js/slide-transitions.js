@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
         parkMansionLink.addEventListener('click', function(event) {
             event.preventDefault();
             document.body.classList.add('slide-out-to-left');
+
+            const url = this.dataset.canvasUrl;
             setTimeout(() => {
-                window.location.href = this.dataset.canvasUrl;
+                window.location.href = url;
             }, 500);
         });
     }
@@ -15,6 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.persisted) {
             document.body.classList.remove('slide-out-to-left');
             document.body.classList.add('slide-in-from-right');
+        }
+    });
+
+    // Use 'visibilitychange' and 'pagehide' as alternatives to 'unload'
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+            document.body.classList.remove('slide-in-from-right');
+        }
+    });
+
+    window.addEventListener('pagehide', (event) => {
+        if (event.persisted === false) {
+            document.body.classList.remove('slide-in-from-right');
         }
     });
 
