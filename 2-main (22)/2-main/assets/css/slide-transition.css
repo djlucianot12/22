@@ -1,29 +1,25 @@
-.fade-and-slide-out {
-    animation: fade-and-slide-out 0.8s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+body.page-transition-out {
+    animation: fadeOut 0.5s forwards;
 }
 
-.fade-and-slide-in {
-    animation: fade-and-slide-in 0.8s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+body.page-transition-in {
+    animation: fadeIn 0.5s forwards;
 }
 
-@keyframes fade-and-slide-out {
+@keyframes fadeOut {
     from {
         opacity: 1;
-        transform: translateY(0);
     }
     to {
         opacity: 0;
-        transform: translateY(-50px);
     }
 }
 
-@keyframes fade-and-slide-in {
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(50px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }

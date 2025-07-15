@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const transitionLinks = document.querySelectorAll('a:not([href^="#"]):not([target="_blank"])');
+    const projectLinks = document.querySelectorAll('.p-stage__menu__item');
 
-    transitionLinks.forEach(link => {
+    projectLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            const url = this.href;
+            const url = this.dataset.canvasUrl;
 
-            if (url.startsWith(window.location.origin)) {
+            if (url) {
                 event.preventDefault();
-                document.body.classList.add('slide-out');
+                document.body.classList.add('page-transition-out');
                 setTimeout(() => {
                     window.location.href = url;
                 }, 500);
@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('pageshow', (event) => {
         if (event.persisted) {
-            document.body.classList.remove('slide-out');
+            document.body.classList.remove('page-transition-out');
         }
     });
 
-    document.body.classList.add('slide-in');
+    document.body.classList.add('page-transition-in');
 });
