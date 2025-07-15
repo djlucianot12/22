@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const url = this.dataset.canvasUrl;
 
-            document.body.classList.add('fade-out-simple');
+            document.body.classList.add('red-flash-out');
 
             setTimeout(() => {
                 window.location.href = url;
