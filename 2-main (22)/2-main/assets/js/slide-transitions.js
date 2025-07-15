@@ -1,25 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const projectLinks = document.querySelectorAll('.p-stage__menu__item');
+    const parkMansionLink = document.querySelector('.p-stage__menu__item[data-canvas-url="works/park-mansion-minami-azabu.html"]');
 
-    projectLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
+    if (parkMansionLink) {
+        parkMansionLink.addEventListener('click', function(event) {
             const url = this.dataset.canvasUrl;
 
             if (url) {
                 event.preventDefault();
-                document.body.classList.add('page-transition-out');
+                document.body.classList.add('dynamic-transition-out');
                 setTimeout(() => {
                     window.location.href = url;
-                }, 500);
+                }, 800);
             }
         });
-    });
+    }
 
-    window.addEventListener('pageshow', (event) => {
-        if (event.persisted) {
-            document.body.classList.remove('page-transition-out');
-        }
-    });
-
-    document.body.classList.add('page-transition-in');
+    if (window.location.pathname.includes('/works/park-mansion-minami-azabu.html')) {
+        document.body.classList.add('dynamic-transition-in');
+    }
 });
