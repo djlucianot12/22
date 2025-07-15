@@ -1,25 +1,29 @@
-body.page-transition-out {
-    animation: fadeOut 0.5s forwards;
+.dynamic-transition-out {
+    animation: slide-out-top 0.8s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
 
-body.page-transition-in {
-    animation: fadeIn 0.5s forwards;
+.dynamic-transition-in {
+    animation: slide-in-bottom 0.8s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
 
-@keyframes fadeOut {
+@keyframes slide-out-top {
     from {
+        transform: translateY(0);
         opacity: 1;
     }
     to {
+        transform: translateY(-100%);
         opacity: 0;
     }
 }
 
-@keyframes fadeIn {
+@keyframes slide-in-bottom {
     from {
+        transform: translateY(100%);
         opacity: 0;
     }
     to {
+        transform: translateY(0);
         opacity: 1;
     }
 }
