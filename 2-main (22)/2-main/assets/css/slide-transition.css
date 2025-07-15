@@ -1,25 +1,23 @@
-#transition-container.color-overlay-out {
-    animation: fade-out-with-color 0.5s forwards;
+.fade-out-simple {
+    animation: fade-out-simple 0.5s forwards;
 }
 
-#transition-container.color-overlay-in {
-    animation: fade-in-from-color 0.5s forwards;
+.fade-in-simple {
+    animation: fade-in-simple 0.5s forwards;
 }
 
-@keyframes fade-out-with-color {
+@keyframes fade-out-simple {
     from {
         opacity: 1;
     }
     to {
         opacity: 0;
-        background-color: #0000ff; /* Azul */
     }
 }
 
-@keyframes fade-in-from-color {
+@keyframes fade-in-simple {
     from {
         opacity: 0;
-        background-color: #0000ff; /* Azul */
     }
     to {
         opacity: 1;

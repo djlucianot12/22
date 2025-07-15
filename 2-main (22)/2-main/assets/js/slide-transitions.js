@@ -1,13 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const parkMansionLink = document.querySelector('.p-stage__menu__item[data-canvas-url="works/park-mansion-minami-azabu.html"]');
-    const transitionContainer = document.getElementById('transition-container');
 
-    if (parkMansionLink && transitionContainer) {
+    if (parkMansionLink) {
         parkMansionLink.addEventListener('click', function(event) {
             event.preventDefault();
             const url = this.dataset.canvasUrl;
 
-            transitionContainer.classList.add('color-overlay-out');
+            document.body.classList.add('fade-out-simple');
 
             setTimeout(() => {
                 window.location.href = url;
