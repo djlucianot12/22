@@ -1,0 +1,18 @@
+/* Estilos para la recreación de la página */
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+#transition-container {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#transition-container.fade-out {
+    opacity: 0;
+}
