@@ -1,5 +1,3 @@
-// Scripts para la recreación de la página
-
 document.addEventListener('DOMContentLoaded', () => {
     const projectLinks = document.querySelectorAll('.p-stage__menu__item');
     const transitionContainer = document.getElementById('transition-container');
