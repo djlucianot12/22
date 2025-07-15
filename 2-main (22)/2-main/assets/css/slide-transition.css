@@ -1,29 +1,27 @@
-body.slide-out {
-    animation: slide-out 0.5s forwards;
+#transition-container.color-overlay-out {
+    animation: fade-out-with-color 0.5s forwards;
 }
 
-body.slide-in {
-    animation: slide-in 0.5s forwards;
+#transition-container.color-overlay-in {
+    animation: fade-in-from-color 0.5s forwards;
 }
 
-@keyframes slide-out {
+@keyframes fade-out-with-color {
     from {
-        transform: translateY(0);
         opacity: 1;
     }
     to {
-        transform: translateY(-100%);
         opacity: 0;
+        background-color: #0000ff; /* Azul */
     }
 }
 
-@keyframes slide-in {
+@keyframes fade-in-from-color {
     from {
-        transform: translateY(100%);
         opacity: 0;
+        background-color: #0000ff; /* Azul */
     }
     to {
-        transform: translateY(0);
         opacity: 1;
     }
 }
