@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500);
         });
     }
-});
 
-window.addEventListener('beforeunload', () => {
-    document.body.classList.add('test-transition-in');
+    // No need for 'beforeunload' or 'pageshow' events
 });
