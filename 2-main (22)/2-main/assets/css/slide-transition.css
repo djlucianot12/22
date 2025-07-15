@@ -1,16 +1,16 @@
-#wrapper.red-flash-out {
-    animation: red-flash-out 0.5s forwards;
+body.red-flash {
+    animation: red-flash 0.5s forwards;
 }
 
-@keyframes red-flash-out {
+@keyframes red-flash {
     0% {
-        opacity: 1;
+        background-color: initial;
     }
     50% {
         background-color: red;
     }
     100% {
-        opacity: 0;
         background-color: red;
+        opacity: 0;
     }
 }
