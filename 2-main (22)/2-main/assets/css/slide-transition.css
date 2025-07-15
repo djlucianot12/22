@@ -1,4 +1,4 @@
-.red-flash-out {
+#wrapper.red-flash-out {
     animation: red-flash-out 0.5s forwards;
 }
 
