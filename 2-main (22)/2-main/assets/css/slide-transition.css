@@ -1,29 +1,29 @@
-.test-transition-out {
-    animation: slide-out-to-left 0.5s forwards;
+.fade-and-slide-out {
+    animation: fade-and-slide-out 0.8s cubic-bezier(0.7, 0, 0.3, 1) forwards;
 }
 
-.test-transition-in {
-    animation: slide-in-from-right 0.5s forwards;
+.fade-and-slide-in {
+    animation: fade-and-slide-in 0.8s cubic-bezier(0.7, 0, 0.3, 1) forwards;
 }
 
-@keyframes slide-out-to-left {
+@keyframes fade-and-slide-out {
     from {
-        transform: translateX(0);
         opacity: 1;
+        transform: translateY(0);
     }
     to {
-        transform: translateX(-100%);
         opacity: 0;
+        transform: translateY(-50px);
     }
 }
 
-@keyframes slide-in-from-right {
+@keyframes fade-and-slide-in {
     from {
-        transform: translateX(100%);
         opacity: 0;
+        transform: translateY(50px);
     }
     to {
-        transform: translateX(0);
         opacity: 1;
+        transform: translateY(0);
     }
 }
