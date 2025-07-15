@@ -1,25 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const transitionLinks = document.querySelectorAll('a:not([href^="#"]):not([target="_blank"])');
+    const parkMansionLink = document.querySelector('.p-stage__menu__item[data-canvas-url="works/park-mansion-minami-azabu.html"]');
 
-    transitionLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            const url = this.href;
+    if (parkMansionLink) {
+        parkMansionLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            const url = this.dataset.canvasUrl;
 
-            if (url.startsWith(window.location.origin)) {
-                event.preventDefault();
-                document.body.classList.add('slide-out');
-                setTimeout(() => {
-                    window.location.href = url;
-                }, 500);
-            }
+            document.body.classList.add('color-overlay-out');
+
+            setTimeout(() => {
+                window.location.href = url;
+            }, 500);
         });
-    });
-
-    window.addEventListener('pageshow', (event) => {
-        if (event.persisted) {
-            document.body.classList.remove('slide-out');
-        }
-    });
-
-    document.body.classList.add('slide-in');
+    }
 });

@@ -1,25 +1,29 @@
-.page-fade-out {
-    animation: fade-out 0.5s ease-in-out forwards;
+body.slide-out {
+    animation: slide-out 0.5s forwards;
 }
 
-.page-fade-in {
-    animation: fade-in 0.5s ease-in-out forwards;
+body.slide-in {
+    animation: slide-in 0.5s forwards;
 }
 
-@keyframes fade-out {
+@keyframes slide-out {
     from {
+        transform: translateY(0);
         opacity: 1;
     }
     to {
+        transform: translateY(-100%);
         opacity: 0;
     }
 }
 
-@keyframes fade-in {
+@keyframes slide-in {
     from {
+        transform: translateY(100%);
         opacity: 0;
     }
     to {
+        transform: translateY(0);
         opacity: 1;
     }
 }
